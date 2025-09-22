@@ -290,11 +290,11 @@ for service in services.items():
         continue
     else:
         if (first_item == 1):
-            dissector_file.write("\tif svcid:uint() == " + str(service[1]) +
+            dissector_file.write("\tif svcid:le_uint() == " + str(service[1]) +
                                  " then\n")
             first_item = 0
         else:
-            dissector_file.write("\telseif svcid:uint() == " + str(service[1])
+            dissector_file.write("\telseif svcid:le_uint() == " + str(service[1])
                                  + " then\n")
         dissector_file.write("\t\tif f.msgid_" + str(service[0]) + " ~= nil then\n");
         dissector_file.write("\t\t\tif indicationbit == 1 then\n")

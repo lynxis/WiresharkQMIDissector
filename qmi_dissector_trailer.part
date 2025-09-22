@@ -29,8 +29,8 @@
 	end
 
 	-- Setup columns
-	local svcstr = services[svcid:uint()] and
-			services[svcid:uint()] or string.format("0x%x", svcid:uint())
+	local svcstr = services[svcid:le_uint()] and
+			services[svcid:le_uint()] or string.format("0x%x", svcid:le_uint())
 	local typestr = indicationbit == 1 and
 			"Indication" or responsebit == 1  and "Response" or "Request"
 	msgstr = msgstr ~= nil and msgstr or string.format("0x%x", msgid:le_uint())

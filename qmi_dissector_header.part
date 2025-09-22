@@ -67,18 +67,13 @@ qmi_proto = Proto("qmi", "Qualcomm MSM Interface")
 -- Fields
 --
 
--- Generic USB and MBIM fields for QMI-over-MBIM
-usb_bInterfaceClass_f = Field.new("usb.bInterfaceClass")
-mbim_control_header_message_type_f = Field.new("mbim.control.header.message_type")
-
 -- QMI fields
 
 local f = qmi_proto.fields
 
--- QMUX Header
+-- QRTR Header
 f.tf =        ProtoField.uint8("qmi.tf", "T/F", base.DEC)
 f.len =       ProtoField.uint16("qmi.len", "Length", base.DEC)
-f.flag =      ProtoField.uint8("qmi.flag", "Flag", base.HEX)
 f.cid =       ProtoField.uint8("qmi.cliend_id", "Client ID", base.HEX)
 -- Transaction Header
 f.resp_ctl =  ProtoField.uint8("qmi.trans_response", "Transaction Response Bit",
