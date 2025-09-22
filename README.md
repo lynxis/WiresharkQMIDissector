@@ -1,3 +1,11 @@
+# modified Wireshark QMI Dissector
+
+- removed USB dissecting
+- replaced QMUX with QRTR dissector
+- allow to use it with qmi-frida-tracer together with scat's wireshark/scat.lua
+
+
+
 # Wireshark QMI Dissector
 Wireshark Dissector for Qualcomm MSM Interface (QMI) Protocol v0.2
 
